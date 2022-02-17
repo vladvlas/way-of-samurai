@@ -1,0 +1,26 @@
+li {
+  list-style-type: none;
+}
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+" h h"
+"m c";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+}
+
+
+.wrapper__content {
+  box-sizing: border-box;
+    grid-area: c;
+    background-color: cadetblue;
+    color: #fff;
+}
+
+
+
+

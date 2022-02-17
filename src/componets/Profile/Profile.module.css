@@ -1,0 +1,17 @@
+.content {
+    grid-area: c;
+    background-color: cadetblue;
+  }
+
+img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+}
+
+.item {
+    color: darkblue;
+}
+
+
