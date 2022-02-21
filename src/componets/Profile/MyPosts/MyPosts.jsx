@@ -2,24 +2,12 @@ import React from 'react'
 
 import classes from './MyPosts.module.css'
 import Post from './Post/Posts';
+// import { addPost } from '../../../redux/state';
 
 
 
 
 const MyPosts = (props) => {
-
-  let addPost = postMessage => {
-
-    let newPost = {
-      id: 5,
-      text: postMessage,
-    };
-   // debugger; 
-    props.posts.push(newPost);
-    //console.log(props)
-  }
-
-  //console.log(props);
   
 
   let myPostsElements = props.posts
@@ -27,17 +15,22 @@ const MyPosts = (props) => {
 
   let NewPostElement = React.createRef();
 
-  const onAddPost = (props) => {
+  const addPost = () => {
     let text = NewPostElement.current.value;
-    addPost(text);
-    //console.log(props.state.posts)
+    props.addPost(text);
+    NewPostElement.current.value = '';
   }
+
+ 
+
+ 
+  
 
   return (
     <div className={classes.posts}>my posts
       <div>
         <textarea ref={NewPostElement}></textarea>
-        <button onClick={onAddPost}>Add post</button>
+        <button onClick={addPost}>Add post</button>
       </div>
       <div className={classes.item}>
         {

@@ -11,26 +11,27 @@ import Profile from './componets/Profile/Profile';
 import Settings from './componets/Settings/Settings';
 
 
+
 const App = (props) => {
 
 
 
   return (
-    <BrowserRouter>
+
       <div className="wrapper">
         <Header />
         <Menu />
         <div className="wrapper__content">
-          <Route path='/profile' render={() => <Profile posts={props.state.profilePage.posts} 
+          <Route path='/profile' render={() => <Profile posts={props.state.profilePage.posts} addPost={props.addPost}
             />} />
           <Route path='/dialogs' render={() => <Dialogs dialogs={props.state.messagesPage.dialogs}
             messages={props.state.messagesPage.messages} />} />
-          <Route path='/news' render={() => <News />} />
+          <Route path='/news' render={() => <News/>} />
           <Route path='/music' render={() => <Music />} />
           <Route path='/settings' render={() => <Settings />} />
         </div>
       </div>
-    </BrowserRouter>
+
 
 
   );

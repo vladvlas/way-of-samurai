@@ -22,7 +22,7 @@ const Message = (props) => {
 const Dialogs = (props) => {
 
     let dialogsElements = props.dialogs
-        .map((dialog) => <DialogItem dialogs={dialog.name} path={dialog.path} key={dialog.id}/>);
+        .map((dialog) => <DialogItem dialogs={dialog.name} path={dialog.path} key={dialog.path}/>);
 
 
     let messagesElements = props.messages
