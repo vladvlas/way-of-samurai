@@ -1,6 +1,6 @@
 
 
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 import Dialogs from './componets/Dialogs/Dialogs';
 import Header from './componets/Header/Header';
