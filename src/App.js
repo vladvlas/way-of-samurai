@@ -22,7 +22,7 @@ const App = (props) => {
         <Header />
         <Menu />
         <div className="wrapper__content">
-          <Route path='/profile' render={() => <Profile posts={props.state.profilePage.posts} addPost={props.addPost}
+          <Route path='/profile' render={() => <Profile posts={props.state.profilePage.posts} dispatch={props.dispatch}
             />} />
           <Route path='/dialogs' render={() => <Dialogs dialogs={props.state.messagesPage.dialogs}
             messages={props.state.messagesPage.messages} />} />

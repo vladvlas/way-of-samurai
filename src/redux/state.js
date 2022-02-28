@@ -58,7 +58,7 @@ let store = {
     _callSubscriber() {
         console.log('state changed')
     },
-    addPost(postMessage) {
+    addPost() {
         let newPost = {
             id: 5,
             text: postMessage
@@ -68,6 +68,20 @@ let store = {
     },
     subscribe(observer) {
         this._callSubscriber = observer;
+    },
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: Date.now(),
+                text: action.text
+            }
+            this._state.profilePage.posts.push(newPost)
+            this._callSubscriber(this._state)
+        }
+        else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.text;
+            this._callSubscriber(this._state)
+        }
     }
 
 
